@@ -1,0 +1,78 @@
+html {
+  background-color: #B8EEFF;
+}
+
+body {
+ font-family: Karla, sans-sarif;
+ width: 600px;
+ height: 600px;
+ margin-left: 25%;
+ margin-right: 25%;
+}
+
+header {
+  border: .25em solid black;
+  border-radius: 15%;
+  display: inline-block;
+  margin-bottom: 30px;
+  background-color: white;
+}
+
+header h1 {
+  font-size: 3em;
+  padding: 5px;
+  margin: 10px;
+  text-align: center;
+}
+
+header h2 {
+  margin-top: 10px;
+  text-align: center;
+}
+
+header img {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+#cow {
+  border: 5px solid green;
+  border-top-left-radius: 10%;
+  margin: 5px;
+  height: 343.75px;
+  width: 275px;
+}
+#chicken {
+  border: 5px solid red;
+  border-top-right-radius: 10%;
+  margin: 5px;
+  height: 343.75px;
+  width: 275px;
+}
+#pig {
+  border: 5px solid blue;
+  border-bottom-left-radius: 10%;
+  margin: 5px;
+  height: 343.75px;
+  width: 275px;
+}
+#goat {
+  border: 5px solid yellow;
+  border-bottom-right-radius: 10%;
+  margin: 5px;
+  height: 343.75px;
+  width: 275px;
+}
+
+footer {
+  border: 1px solid #B8EEFF;
+  background-image: url("../images/grass.png");
+  text-align: right;
+  padding-top: 20px;
+}
+
+h4 {
+  margin-right: 25px;
+}
+
