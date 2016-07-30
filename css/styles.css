@@ -1,5 +1,6 @@
 html {
-  background-color: #B8EEFF;
+  background: #B8EEFF;
+  background: linear-gradient(#FFFFFF, #B8EEFF, #56CAFF);
 }
 
 body {
@@ -13,8 +14,7 @@ body {
 }
 
 header {
-  width: 75%;
-  height: 75%;
+  width: 60%;
   border: .25em solid black;
   border-radius: 15%;
   display: flex;
@@ -25,73 +25,161 @@ header {
 }
 
 header h1 {
-  font-size: 3em;
+  font-size: 4em;
+  font-weight: bolder;
   padding: 5px;
   margin: 10px;
   text-align: center;
 }
 
 header h2 {
+  font-size: 2em;
   margin-top: 10px;
   text-align: center;
 }
 
 header img {
-  margin: 0;
+  width: auto;
+  height: auto;
+  margin: 10px;
   padding: 5%;
   border: 0;
 }
 
+#play {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  border-radius: 15%;
+  background-color: white;
+  font-size: 3em;
+}
+
+#play:hover {
+  background-color: blue;
+}
+#play:focus {
+  outline: none;
+}
+
 article {
-  width: 75%;
+  width: 90%;
   margin: 0 auto;
 }
 
 #Instructions {
+  margin: 0 auto 30px;
+  width: 75%;
+  font-size: 20px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 75%;
+  justify-content: center;
+  border-radius: 5%;
+  text-align: center;
 }
 
-#GameBoard {
-  display: flex;
-  flex-flow: wrap;
-  width: 75%;
+.GameBoard {
   margin: 0 auto;
+  width: 90%;
+}
+
+.Cards {
+  margin: auto;
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.gamePiece {
+  background-color: white;
+  margin: 10px;
+  padding: 0
+  border: 0;
+}
+
+#cowBtn:hover {
+  background-color: green;
+  border: 5px solid green;
+}
+
+#cowBtn {
+  border: none;
+  border-top-left-radius: 10%;
+  height: auto;
+  width: 45%;
 }
 
 #cow {
   border: 5px solid green;
   border-top-left-radius: 10%;
-  margin: 5px;
-  height: 343.75px;
-  width: 275px;
+  height: auto;
+  width: auto;
 }
+
+#chickenBtn:hover {
+  background-color: red;
+  border: 5px solid red;
+}
+
+#chickenBtn {
+  border: none;
+  border-top-right-radius: 10%;
+  height: auto;
+  width: 45%;
+}
+
 #chicken {
   border: 5px solid red;
   border-top-right-radius: 10%;
-  margin: 5px;
-  height: 343.75px;
-  width: 275px;
+  height: auto;
+  width: auto;
 }
+
+#pigBtn:hover {
+  background-color: blue;
+  border: 5px solid blue;
+}
+
+#pigBtn {
+  border: none;
+  border-bottom-left-radius: 10%;
+  margin: 0;
+  height: auto;
+  width: 45%;
+}
+
 #pig {
   border: 5px solid blue;
   border-bottom-left-radius: 10%;
-  margin: 5px;
-  height: 343.75px;
-  width: 275px;
+  margin: 0;
+  height: auto;
+  width: auto;
 }
+
+#goatBtn:hover {
+  background-color: yellow;
+  border: 5px solid yellow;
+}
+
+#goatBtn {
+  border: none;
+  border-bottom-right-radius: 10%;
+  margin: 5px;
+  height: auto;
+  width: 45%;
+}
+
 #goat {
   border: 5px solid yellow;
   border-bottom-right-radius: 10%;
   margin: 5px;
-  height: 343.75px;
-  width: 275px;
+  height: auto;
+  width: auto;
 }
 
 footer {
-  border: 1px solid #B8EEFF;
+
   background-image: url("../images/grass.png");
   text-align: right;
   padding-top: 20px;
