@@ -26,31 +26,44 @@ goatAudio.setAttribute('autoplay:false', 'autoplay');
 $(document).ready(function() {
 
   $("#play").on( "click", function() {
-    window.alert("Is this still working?");
+    //window.alert("Is this still working?");
 
     //create the compSequence for 1st time
     function createSequence(round) {
-      for (i = 1; i <= this.round; i++) {
-        compSequence.push(Math.floor(Math.random() * 4) - 1);
+      for (i = 1; i <= round; i++) {
+        gameSettings.compSequence.push(Math.floor(Math.random() * 4) + 1);
       }
     }
 
+    createSequence(gameSettings.round);
+    console.log(gameSettings.compSequence);
+
     function gameLoop() { //how to loop through compSequence?
-      for(i = 0; i <= this.compSquence.length; i++) {
-        if (compSequence(i) === 1) {
+      for(i = 0; i <= gameSettings.compSequence.length; i++) {
+        if (gameSettings.compSequence[i] === 1) {
           cowAudio.play();
+          $("#cowBtn").css("border", "5px solid green");
+          $("#cowBtn").css("background", "green");
         }
-        else if (compSequence(i) === 2) {
+        else if (gameSettings.compSequence[i] === 2) {
           chickenAudio.play();
+          $("#chickenBtn").css("border", "5px solid red");
+          $("#chickenBtn").css("background", "red");
         }
-        else if (compSequence(i) === 3) {
+        else if (gameSettings.compSequence[i] === 3) {
           pigAudio.play();
+          $("#pigBtn").css("border", "5px solid blue");
+          $("#pigBtn").css("background", "blue");
         }
-        else {
+        else if (gameSettings.compSequence[i] === 4) {
           goatAudio.play();
+          $("#goatBtn").css("border", "5px solid yellow");
+          $("#goatBtn").css("background", "yellow");
         }
       }
     }
+
+    gameLoop(gameSettings.compSequence);
 
     });
 
