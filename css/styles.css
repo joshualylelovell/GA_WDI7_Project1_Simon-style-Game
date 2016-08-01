@@ -103,6 +103,10 @@ article {
   border: 5px solid green;
 }
 
+#cowBtn:focus {
+  outline: none;
+}
+
 #cowBtn {
   border: none;
   border-top-left-radius: 10%;
@@ -111,7 +115,7 @@ article {
 }
 
 #cow {
-  border: 5px solid green;
+  border: 5px solid white;
   border-top-left-radius: 10%;
   height: auto;
   width: auto;
@@ -120,6 +124,9 @@ article {
 #chickenBtn:hover {
   background-color: red;
   border: 5px solid red;
+}
+#chickenBtn:focus {
+  outline: none;
 }
 
 #chickenBtn {
@@ -130,7 +137,7 @@ article {
 }
 
 #chicken {
-  border: 5px solid red;
+  border: 5px solid white;
   border-top-right-radius: 10%;
   height: auto;
   width: auto;
@@ -140,17 +147,19 @@ article {
   background-color: blue;
   border: 5px solid blue;
 }
+#pigBtn:focus {
+  outline: none;
+}
 
 #pigBtn {
   border: none;
   border-bottom-left-radius: 10%;
-  margin: 0;
   height: auto;
   width: 45%;
 }
 
 #pig {
-  border: 5px solid blue;
+  border: 5px solid white;
   border-bottom-left-radius: 10%;
   margin: 0;
   height: auto;
@@ -161,17 +170,19 @@ article {
   background-color: yellow;
   border: 5px solid yellow;
 }
+#goatBtn:focus {
+  outline: none;
+}
 
 #goatBtn {
   border: none;
   border-bottom-right-radius: 10%;
-  margin: 5px;
   height: auto;
   width: 45%;
 }
 
 #goat {
-  border: 5px solid yellow;
+  border: 5px solid white;
   border-bottom-right-radius: 10%;
   margin: 5px;
   height: auto;
