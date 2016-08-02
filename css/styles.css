@@ -110,7 +110,6 @@ article {
 }
 
 #cow {
-  border: 5px solid #008000;
   border-top-left-radius: 10%;
   height: auto;
   width: auto;
@@ -128,7 +127,6 @@ article {
 }
 
 #chicken {
-  border: 5px solid #FF0000;
   border-top-right-radius: 10%;
   height: auto;
   width: auto;
@@ -146,7 +144,6 @@ article {
 }
 
 #pig {
-  border: 5px solid #0000FF;
   border-bottom-left-radius: 10%;
   margin: 0;
   height: auto;
@@ -165,11 +162,29 @@ article {
 }
 
 #goat {
-  border: 5px solid #FFFF00;
   border-bottom-right-radius: 10%;
   margin: 5px;
   height: auto;
   width: auto;
+}
+
+#roundCounter {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: 90%;
+}
+
+.counterLine {
+  display: inline-block;
+  color: black;
+  background-color: white;
+  font-size: 5em;
+  border-radius: 15%;
+  border: 1px solid #B8EEFF;
+  text-align: center;
+  margin: 3%;
+  padding: 3%;
 }
 
 footer {

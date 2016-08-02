@@ -29,6 +29,10 @@ function newRound () {
   ++gameSettings.round;
   window.alert("Congrats! Move on to the next round.");
   console.log(gameSettings.round);
+  gameSettings.playerSequence = [];
+  createSequence();
+  $("#counter").html(gameSettings.compSequence.length);
+  gameLoop();
 }
 
 function endGame () {
@@ -36,6 +40,7 @@ function endGame () {
   gameSettings.playerSequence = [];
   gameSettings.round = 1;
   window.alert("Not quite right. Click PLAY to try a new sequence.");
+  $("#counter").html(gameSettings.compSequence.length);
 }
 
 /* Dr. Mike helped with creating a switch statement rather than using a for loop
@@ -74,6 +79,11 @@ function delayedPlay(animalNumber, delay) {
   setTimeout(function() {
     showAnimal(animalNumber);
   }, delay);
+}
+
+function computerTurn () {
+  createSequence ();
+  gameLoop ();
 }
 
 function createSequence(round) {
@@ -172,18 +182,13 @@ function gamePlay() {
       });
 }
 
-$(document).ready(function() {
+//$(document).ready(function() {
 
   $("#play").on( "click", function() {
-
-    createSequence(gameSettings.round);
-    console.log(gameSettings.compSequence);
-
-    gameLoop(gameSettings.compSequence);
-
-    gamePlay();
-
+    computerTurn();
 });
+
+gamePlay();
 
 //allows for button click while not in gameplay mode
 
@@ -215,5 +220,5 @@ $("#goatBtn").click( function() {
       setTimeout(clearBtn, 500);
   })
 
-});
+//});
 
