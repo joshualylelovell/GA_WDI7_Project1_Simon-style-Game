@@ -25,6 +25,19 @@ var clearBtn = function () {
   $(".gamePiece").css("background-color", "white");
   };
 
+function newRound () {
+  ++gameSettings.round;
+  window.alert("Congrats! Move on to the next round.");
+  console.log(gameSettings.round);
+}
+
+function endGame () {
+  gameSettings.compSequence = [];
+  gameSettings.playerSequence = [];
+  gameSettings.round = 1;
+  window.alert("Not quite right. Click PLAY to try a new sequence.");
+}
+
 /* Dr. Mike helped with creating a switch statement rather than using a for loop
 and setting the delay function with setTimeout based on the switch statement */
 
@@ -63,102 +76,116 @@ function delayedPlay(animalNumber, delay) {
   }, delay);
 }
 
+function createSequence(round) {
+  for (var i = 1; i <= round; i++) {
+    gameSettings.compSequence.push(Math.floor(Math.random() * 4) + 1);
+  }
+}
+
+function gameLoop() {
+  for(var i = 0; i <= gameSettings.compSequence.length; i++) {
+    delayedPlay(gameSettings.compSequence[i], i * 1000);
+  }
+}
+
+function gamePlay() {
+
+  $("#cowBtn").on( "click", function() {
+      cowAudio.play();
+      $("#cowBtn").css("border", "5px solid green");
+      $("#cowBtn").css("background-color", "green");
+      gameSettings.playerSequence.push(1);
+      console.log(gameSettings.playerSequence);
+      if ((gameSettings.playerSequence.length === gameSettings.compSequence.length)
+          && _.isEqual(gameSettings.compSequence, gameSettings.playerSequence)) {
+            setTimeout(function() {
+              newRound();
+            }, 300);
+            }
+      else if (gameSettings.playerSequence.length === gameSettings.compSequence.length) {
+            setTimeout(function() {
+              endGame();
+            }, 300);
+            }
+      setTimeout(clearBtn, 500);
+      });
+
+  $("#chickenBtn").on( "click", function() {
+      chickenAudio.play();
+      $("#chickenBtn").css("border", "5px solid red");
+      $("#chickenBtn").css("background-color", "red");
+      gameSettings.playerSequence.push(2);
+      console.log(gameSettings.playerSequence);
+      if ((gameSettings.playerSequence.length === gameSettings.compSequence.length)
+          && _.isEqual(gameSettings.compSequence, gameSettings.playerSequence)) {
+            setTimeout(function() {
+              newRound();
+            }, 300);
+            }
+      else if (gameSettings.playerSequence.length === gameSettings.compSequence.length) {
+            setTimeout(function() {
+              endGame();
+            }, 300);
+            }
+      setTimeout(clearBtn, 500);
+      });
+
+  $("#pigBtn").on( "click", function() {
+      pigAudio.play();
+      $("#pigBtn").css("border", "5px solid blue");
+      $("#pigBtn").css("background", "blue");
+      gameSettings.playerSequence.push(3);
+      console.log(gameSettings.playerSequence);
+      if ((gameSettings.playerSequence.length === gameSettings.compSequence.length)
+          && _.isEqual(gameSettings.compSequence, gameSettings.playerSequence)) {
+            setTimeout(function() {
+              newRound();
+            }, 300);
+            }
+      else if (gameSettings.playerSequence.length === gameSettings.compSequence.length) {
+            setTimeout(function() {
+              endGame();
+            }, 300);
+            }
+      setTimeout(clearBtn, 500);
+      });
+
+  $("#goatBtn").on( "click", function() {
+      goatAudio.play();
+      $("#goatBtn").css("border", "#5px solid yellow");
+      $("#goatBtn").css("background-color", "yellow");
+      setTimeout(clearBtn, 500);
+      gameSettings.playerSequence.push(4);
+      console.log(gameSettings.playerSequence);
+      if ((gameSettings.playerSequence.length === gameSettings.compSequence.length)
+          && _.isEqual(gameSettings.compSequence, gameSettings.playerSequence)) {
+            setTimeout(function() {
+              newRound();
+            }, 300);
+            }
+      else if (gameSettings.playerSequence.length === gameSettings.compSequence.length) {
+            setTimeout(function() {
+              endGame();
+            }, 300);
+            }
+      setTimeout(clearBtn, 500);
+      });
+}
+
 $(document).ready(function() {
 
   $("#play").on( "click", function() {
 
-    function createSequence(round) {
-      for (var i = 1; i <= round; i++) {
-        gameSettings.compSequence.push(Math.floor(Math.random() * 4) + 1);
-      }
-    }
-
     createSequence(gameSettings.round);
     console.log(gameSettings.compSequence);
 
-    function gameLoop() {
-      for(var i = 0; i <= gameSettings.compSequence.length; i++) {
-        delayedPlay(gameSettings.compSequence[i], i * 1000);
-      }
-    }
-
     gameLoop(gameSettings.compSequence);
 
-//can't compare an array to an array. just checking data elements
-//could write a for loop to check each index of each array
-//lodash library _.isEqual(array1, array2)
-
-    $("#cowBtn").on( "click", function() {
-          cowAudio.play();
-          $("#cowBtn").css("border", "5px solid green");
-          $("#cowBtn").css("background-color", "green");
-          setTimeout(clearBtn, 500);
-          gameSettings.playerSequence.push(1);
-          console.log(gameSettings.playerSequence);
-          if ((gameSettings.playerSequence.length === gameSettings.compSequence.length)
-              && _.isEqual(gameSettings.compSequence, gameSettings.playerSequence)) {
-                window.alert("YESSSSSSSS!");
-                }
-          else if ((gameSettings.playerSequence.length === gameSettings.compSequence.length)
-                   && _.isEqual(gameSettings.compSequence, gameSettings.playerSequence)) {
-                window.alert("This isn't quite right");
-                }
-          });
-
-    $("#chickenBtn").on( "click", function() {
-          chickenAudio.play();
-          $("#chickenBtn").css("border", "5px solid red");
-          $("#chickenBtn").css("background-color", "red");
-          setTimeout(clearBtn, 500);
-          gameSettings.playerSequence.push(2);
-          console.log(gameSettings.playerSequence);
-          if ((gameSettings.playerSequence.length === gameSettings.compSequence.length)
-              && _.isEqual(gameSettings.compSequence, gameSettings.playerSequence)) {
-                window.alert("YESSSSSSSS!");
-                }
-          else if ((gameSettings.playerSequence.length === gameSettings.compSequence.length)
-                   && _.isEqual(gameSettings.compSequence, gameSettings.playerSequence)) {
-                window.alert("This isn't quite right");
-                }
-          });
-
-    $("#pigBtn").on( "click", function() {
-          pigAudio.play();
-          $("#pigBtn").css("border", "5px solid blue");
-          $("#pigBtn").css("background", "blue");
-          setTimeout(clearBtn, 500);
-          gameSettings.playerSequence.push(3);
-          console.log(gameSettings.playerSequence);
-          if ((gameSettings.playerSequence.length === gameSettings.compSequence.length)
-              && _.isEqual(gameSettings.compSequence, gameSettings.playerSequence)) {
-                window.alert("YESSSSSSSS!");
-                }
-          else if ((gameSettings.playerSequence.length === gameSettings.compSequence.length)
-                   && _.isEqual(gameSettings.compSequence, gameSettings.playerSequence)) {
-                window.alert("This isn't quite right");
-                }
-          });
-
-    $("#goatBtn").on( "click", function() {
-          goatAudio.play();
-          $("#goatBtn").css("border", "#5px solid yellow");
-          $("#goatBtn").css("background-color", "yellow");
-          setTimeout(clearBtn, 500);
-          gameSettings.playerSequence.push(4);
-          console.log(gameSettings.playerSequence);
-          if ((gameSettings.playerSequence.length === gameSettings.compSequence.length)
-              && _.isEqual(gameSettings.compSequence, gameSettings.playerSequence)) {
-                window.alert("YESSSSSSSS!");
-                }
-          else if ((gameSettings.playerSequence.length === gameSettings.compSequence.length)
-                   && _.isEqual(gameSettings.compSequence, gameSettings.playerSequence)) {
-                window.alert("This isn't quite right");
-                }
-          });
+    gamePlay();
 
 });
 
-/*
+//allows for button click while not in gameplay mode
 
   $("#cowBtn").click( function () {
       cowAudio.play();
@@ -186,7 +213,7 @@ $("#goatBtn").click( function() {
       $("#goatBtn").css("border", "#5px solid yellow");
       $("#goatBtn").css("background-color", "yellow");
       setTimeout(clearBtn, 500);
-  }) */
+  })
 
 });
 

@@ -98,11 +98,6 @@ article {
   border: 0;
 }
 
-#cowBtn:hover {
-  background-color: #008000;
-  border: 5px solid #008000;
-}
-
 #cowBtn:focus {
   outline: none;
 }
@@ -121,10 +116,6 @@ article {
   width: auto;
 }
 
-#chickenBtn:hover {
-  background-color: #FF0000;
-  border: 5px solid #FF0000;
-}
 #chickenBtn:focus {
   outline: none;
 }
@@ -143,10 +134,6 @@ article {
   width: auto;
 }
 
-#pigBtn:hover {
-  background-color: #0000FF;
-  border: 5px solid #0000FF;
-}
 #pigBtn:focus {
   outline: none;
 }
@@ -166,10 +153,6 @@ article {
   width: auto;
 }
 
-#goatBtn:hover {
-  background-color: #FFFF00;
-  border: 5px solid #FFFF00;
-}
 #goatBtn:focus {
   outline: none;
 }
@@ -193,9 +176,10 @@ footer {
 
   background-image: url("../images/grass.png");
   text-align: right;
-  padding-top: 20px;
+  padding: 20px;
   width: 75%;
-  margin: 0 auto;
+  height: 100%;
+  margin: auto;
 }
 
 h4 {

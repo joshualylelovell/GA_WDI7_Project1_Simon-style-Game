@@ -9,6 +9,7 @@ Hopefully this game will meet each of them where they are developmentally.
 
  * HTML, CSS, JavaScript
  * jQuery
+ * lodash
 
 ### Links:
 
