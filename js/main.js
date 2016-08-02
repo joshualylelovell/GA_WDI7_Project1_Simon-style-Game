@@ -1,8 +1,7 @@
 var gameSettings = {
   compSequence: [],
   playerSequence: [],
-  round: 5,
-  speed: 2000,
+  round: 1,
 }
 
 var cowAudio = document.createElement('audio');
@@ -25,6 +24,9 @@ var clearBtn = function () {
   $(".gamePiece").css("border", "none");
   $(".gamePiece").css("background-color", "white");
   };
+
+/* Dr. Mike helped with creating a switch statement rather than using a for loop
+and setting the delay function with setTimeout based on the switch statement */
 
 function showAnimal(animalNumber) {
   switch(animalNumber) {
@@ -81,12 +83,85 @@ $(document).ready(function() {
     }
 
     gameLoop(gameSettings.compSequence);
-  });
 
+//can't compare an array to an array. just checking data elements
+//could write a for loop to check each index of each array
+//lodash library _.isEqual(array1, array2)
+
+    $("#cowBtn").on( "click", function() {
+          cowAudio.play();
+          $("#cowBtn").css("border", "5px solid green");
+          $("#cowBtn").css("background-color", "green");
+          setTimeout(clearBtn, 500);
+          gameSettings.playerSequence.push(1);
+          console.log(gameSettings.playerSequence);
+          if ((gameSettings.playerSequence.length === gameSettings.compSequence.length)
+              && _.isEqual(gameSettings.compSequence, gameSettings.playerSequence)) {
+                window.alert("YESSSSSSSS!");
+                }
+          else if ((gameSettings.playerSequence.length === gameSettings.compSequence.length)
+                   && _.isEqual(gameSettings.compSequence, gameSettings.playerSequence)) {
+                window.alert("This isn't quite right");
+                }
+          });
+
+    $("#chickenBtn").on( "click", function() {
+          chickenAudio.play();
+          $("#chickenBtn").css("border", "5px solid red");
+          $("#chickenBtn").css("background-color", "red");
+          setTimeout(clearBtn, 500);
+          gameSettings.playerSequence.push(2);
+          console.log(gameSettings.playerSequence);
+          if ((gameSettings.playerSequence.length === gameSettings.compSequence.length)
+              && _.isEqual(gameSettings.compSequence, gameSettings.playerSequence)) {
+                window.alert("YESSSSSSSS!");
+                }
+          else if ((gameSettings.playerSequence.length === gameSettings.compSequence.length)
+                   && _.isEqual(gameSettings.compSequence, gameSettings.playerSequence)) {
+                window.alert("This isn't quite right");
+                }
+          });
+
+    $("#pigBtn").on( "click", function() {
+          pigAudio.play();
+          $("#pigBtn").css("border", "5px solid blue");
+          $("#pigBtn").css("background", "blue");
+          setTimeout(clearBtn, 500);
+          gameSettings.playerSequence.push(3);
+          console.log(gameSettings.playerSequence);
+          if ((gameSettings.playerSequence.length === gameSettings.compSequence.length)
+              && _.isEqual(gameSettings.compSequence, gameSettings.playerSequence)) {
+                window.alert("YESSSSSSSS!");
+                }
+          else if ((gameSettings.playerSequence.length === gameSettings.compSequence.length)
+                   && _.isEqual(gameSettings.compSequence, gameSettings.playerSequence)) {
+                window.alert("This isn't quite right");
+                }
+          });
+
+    $("#goatBtn").on( "click", function() {
+          goatAudio.play();
+          $("#goatBtn").css("border", "#5px solid yellow");
+          $("#goatBtn").css("background-color", "yellow");
+          setTimeout(clearBtn, 500);
+          gameSettings.playerSequence.push(4);
+          console.log(gameSettings.playerSequence);
+          if ((gameSettings.playerSequence.length === gameSettings.compSequence.length)
+              && _.isEqual(gameSettings.compSequence, gameSettings.playerSequence)) {
+                window.alert("YESSSSSSSS!");
+                }
+          else if ((gameSettings.playerSequence.length === gameSettings.compSequence.length)
+                   && _.isEqual(gameSettings.compSequence, gameSettings.playerSequence)) {
+                window.alert("This isn't quite right");
+                }
+          });
+
+});
+
+/*
 
   $("#cowBtn").click( function () {
       cowAudio.play();
-      console.log("cow");
       $("#cowBtn").css("border", "5px solid green");
       $("#cowBtn").css("background-color", "green");
       setTimeout(clearBtn, 500);
@@ -94,7 +169,6 @@ $(document).ready(function() {
 
   $("#chickenBtn").click( function() {
       chickenAudio.play();
-      console.log("chicken");
       $("#chickenBtn").css("border", "5px solid red");
       $("#chickenBtn").css("background-color", "red");
       setTimeout(clearBtn, 500);
@@ -102,7 +176,6 @@ $(document).ready(function() {
 
   $("#pigBtn").click( function() {
       pigAudio.play();
-      console.log("pig");
       $("#pigBtn").css("border", "5px solid blue");
       $("#pigBtn").css("background", "blue");
       setTimeout(clearBtn, 500);
@@ -110,11 +183,10 @@ $(document).ready(function() {
 
 $("#goatBtn").click( function() {
       goatAudio.play();
-      console.log("goat");
       $("#goatBtn").css("border", "#5px solid yellow");
       $("#goatBtn").css("background-color", "yellow");
       setTimeout(clearBtn, 500);
-  })
+  }) */
 
 });
 
