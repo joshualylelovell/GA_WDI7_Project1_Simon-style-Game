@@ -30,28 +30,24 @@ function showAnimal(animalNumber) {
   switch(animalNumber) {
     case 1:
       cowAudio.play();
-      console.log("cow");
       $("#cowBtn").css("border", "5px solid green");
       $("#cowBtn").css("background-color", "green");
       setTimeout(clearBtn, 750);
       break;
     case 2:
       chickenAudio.play();
-      console.log("chicken");
       $("#chickenBtn").css("border", "5px solid red");
       $("#chickenBtn").css("background-color", "red");
       setTimeout(clearBtn, 750);
       break;
     case 3:
       pigAudio.play();
-      console.log("pig");
       $("#pigBtn").css("border", "5px solid blue");
       $("#pigBtn").css("background", "blue");
       setTimeout(clearBtn, 750);
       break;
     case 4:
       goatAudio.play();
-      console.log("goat");
       $("#goatBtn").css("border", "5px solid yellow");
       $("#goatBtn").css("background-color", "yellow");
       setTimeout(clearBtn, 750);
@@ -80,7 +76,6 @@ $(document).ready(function() {
 
     function gameLoop() {
       for(var i = 0; i <= gameSettings.compSequence.length; i++) {
-        // sleep(2000);
         delayedPlay(gameSettings.compSequence[i], i * 1000);
       }
     }
@@ -88,10 +83,6 @@ $(document).ready(function() {
     gameLoop(gameSettings.compSequence);
   });
 
-  /* $.when(gameLoop()).done(function() {
-      $(".gamePiece").css("border", "none");
-      $(".gamePiece").css("background-color", "white");
-    }); */
 
   $("#cowBtn").click( function () {
       cowAudio.play();
@@ -126,16 +117,4 @@ $("#goatBtn").click( function() {
   })
 
 });
-
-/* very very bad!!!
-function sleep(milliseconds) {
-    var start = new Date().getTime();
-    while (1) {
-        if ((new Date().getTime() - start) > milliseconds) {
-            break;
-        }
-    }
-}
-*/
-
 
