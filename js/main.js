@@ -21,6 +21,10 @@ var goatAudio = document.createElement('audio');
   goatAudio.setAttribute('src', 'sounds/goatCut.mp3');
   goatAudio.setAttribute('autoplay:false', 'autoplay');
 
+var failAudio = document.createElement('audio');
+  failAudio.setAttribute('src', 'sounds/Fail.mp3');
+  failAudio.setAttribute('autoplay:false', 'autoplay');
+
 var clearBtn = function () {
   $(".gamePiece").css("border", "none");
   $(".gamePiece").css("background-color", "white");
@@ -67,12 +71,12 @@ function delayedPlay(animalNumber, delay) {
 }
 
 $("#reset").on( "click", function() {
-  gameSettings.compSequence = [];
-  gameSettings.playerSequence = [];
-  gameSettings.round = 1;
-  gameSettings.highScore = 0;
-  $("#counter").html(gameSettings.round - 1);
-  $("#roundNum").html(gameSettings.round);
+  this.compSequence = [];
+  this.playerSequence = [];
+  this.round = 1;
+  this.highScore = 0;
+  $("#counter").html(this.round - 1);
+  $("#roundNum").html(this.round);
   $("#play").css("visibility", "visible");
 });
 
@@ -105,9 +109,9 @@ function endGame () {
   gameSettings.compSequence = [];
   gameSettings.playerSequence = [];
   gameSettings.round = 1;
-  window.alert("Not quite right. Click PLAY to try a new sequence.");
+  //window.alert("Not quite right. Click PLAY to try a new sequence.");
+  failAudio.play();
   $("#roundNum").html(gameSettings.round);
-
   $("#play").css("visibility", "visible");
 }
 
