@@ -70,15 +70,16 @@ $("#reset").on( "click", function() {
   gameSettings.compSequence = [];
   gameSettings.playerSequence = [];
   gameSettings.round = 1;
-  //$("#counter").html(gameSettings.round - 1);
-  $("#counter").html(gameSettings.round);
+  gameSettings.highScore = 0;
+  $("#counter").html(gameSettings.round - 1);
+  $("#roundNum").html(gameSettings.round);
   $("#play").css("visibility", "visible");
 });
 
 function computerTurn () {
   createSequence();
   gameLoop ();
-  //$("#counter").html(gameSettings.round - 1);
+  $("#roundNum").html(gameSettings.round);
   if (gameSettings.round == (gameSettings.highScore + 1)) {
     ++gameSettings.highScore;
   }
@@ -105,8 +106,7 @@ function endGame () {
   gameSettings.playerSequence = [];
   gameSettings.round = 1;
   window.alert("Not quite right. Click PLAY to try a new sequence.");
-  //$("#counter").html(gameSettings.round - 1);
-  //$("#counter").html(gameSettings.round);
+  $("#roundNum").html(gameSettings.round);
 
   $("#play").css("visibility", "visible");
 }

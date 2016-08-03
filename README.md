@@ -28,6 +28,11 @@ If the player does not repeat the pattern correctly, the game will reset and the
   * User will be able to listen to a background song being played throughout the game.
   * User will be able to toggle off the music, if desired.
 
+### Other to do's:
+
+  * DRY up the CSS and JavaScript
+  * Work on responsive design
+
 
 ### Wireframe:
 
