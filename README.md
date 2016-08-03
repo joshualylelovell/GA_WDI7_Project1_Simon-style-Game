@@ -18,7 +18,11 @@ They are the inspiration for this version of Simon.
 * [Deployed project](http://joshua-lovell-project1.bitballoon.com/)
 * [Trello Board](https://trello.com/b/ftcYgEGh/ga-wdi-project-1#)
 
-### Many thanks to:
+### Wireframe:
+
+![Imgur](http://i.imgur.com/c9Z8PdD.png)
+
+#### Many thanks to:
 
   * Dr. Mike, Emily, and Andrea for technical assistance, troubleshooting, and code help
   * Leslie, Justin, Sam, and Ed for game logic ideas, troubleshooting, and code help
