@@ -22,7 +22,7 @@ var goatAudio = document.createElement('audio');
   goatAudio.setAttribute('autoplay:false', 'autoplay');
 
 var failAudio = document.createElement('audio');
-  failAudio.setAttribute('src', 'sounds/Fail.mp3');
+  failAudio.setAttribute('src', 'sounds/fail.mp3');
   failAudio.setAttribute('autoplay:false', 'autoplay');
 
 var clearBtn = function () {
