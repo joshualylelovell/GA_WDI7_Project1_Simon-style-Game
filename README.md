@@ -5,6 +5,9 @@ I have 6 nephews and nieces all under the age of 5.
 Some are learning their animals, some are learning colors, and the oldest is obsessed with Simon.
 They are the inspiration for this version of Simon.
 
+Similar to any other Simon memory game, the player must repeat the randomly generated pattern of colors and sounds.
+If the player does not repeat the pattern correctly, the game will reset and the player will be prompted to start over.
+
 
 
 ### Technologies utilized:
@@ -21,6 +24,8 @@ They are the inspiration for this version of Simon.
 ### Wireframe:
 
 ![Imgur](http://i.imgur.com/c9Z8PdD.png)
+
+  * Since creating the Wireframe, changes were made to include a reset button in a div below the gameboard.
 
 #### Many thanks to:
 
