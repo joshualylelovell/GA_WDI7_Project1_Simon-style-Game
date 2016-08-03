@@ -179,12 +179,16 @@ article {
   display: inline-block;
   color: black;
   background-color: white;
-  font-size: 5em;
+  font-size: 3em;
   border-radius: 15%;
   border: 1px solid #B8EEFF;
   text-align: center;
   margin: 3%;
   padding: 3%;
+}
+
+span {
+  vertical-align: middle;
 }
 
 footer {

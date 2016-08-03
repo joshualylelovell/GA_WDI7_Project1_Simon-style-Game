@@ -57,17 +57,25 @@ function showAnimal(animalNumber) {
     }
 }
 
+//Dr. Mike assisted in creating a setTimeout function and showing me its functionality
+
 function delayedPlay(animalNumber, delay) {
   setTimeout(function() {
     showAnimal(animalNumber);
   }, delay);
 }
 
+$("#reset").on( "click", function() {
+  gameSettings.compSequence = [];
+  gameSettings.playerSequence = [];
+  gameSettings.round = 1;
+  $("#counter").html(gameSettings.round - 1);
+});
 
 function computerTurn () {
   createSequence();
   gameLoop ();
-  $("#counter").html(gameSettings.compSequence.length);
+  $("#counter").html(gameSettings.round - 1);
 }
 
 function createSequence() {
@@ -90,7 +98,7 @@ function endGame () {
   gameSettings.playerSequence = [];
   gameSettings.round = 1;
   window.alert("Not quite right. Click PLAY to try a new sequence.");
-  $("#counter").html(gameSettings.compSequence.length);
+  $("#counter").html(gameSettings.round - 1);
 }
 
 function gamePlay() {
