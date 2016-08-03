@@ -101,7 +101,17 @@ function endGame () {
   $("#counter").html(gameSettings.round - 1);
 }
 
-function gamePlay() {
+//function gamePlay() {
+
+
+//}
+
+$(document).ready(function() {
+
+  $("#play").on( "click", function() {
+    computerTurn();
+//    gamePlay();
+  });
 
   $("#cowBtn").on( "click", function() {
       cowAudio.play();
@@ -195,14 +205,6 @@ function gamePlay() {
             }
       setTimeout(clearBtn, 500);
       });
-}
-
-$(document).ready(function() {
-
-  $("#play").on( "click", function() {
-    computerTurn();
-    gamePlay();
-  });
 
 
 });

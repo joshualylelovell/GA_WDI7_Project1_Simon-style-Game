@@ -1,4 +1,4 @@
-# A variation on Simon for Project 1
+# A Variation of Simon
 ## Old MacDonald's Farm - Simon Style
 
 I have 6 nephews and nieces all under the age of 5.
