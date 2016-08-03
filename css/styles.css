@@ -47,7 +47,7 @@ header img {
 }
 
 #play {
-  margin: auto;
+  margin: 0 auto 20px;
   display: flex;
   justify-content: center;
   border-radius: 15%;

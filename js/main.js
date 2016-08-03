@@ -101,16 +101,12 @@ function endGame () {
   $("#counter").html(gameSettings.round - 1);
 }
 
-//function gamePlay() {
-
-
-//}
-
 $(document).ready(function() {
 
   $("#play").on( "click", function() {
+    gameSettings.playerSequence = [];
     computerTurn();
-//    gamePlay();
+
   });
 
   $("#cowBtn").on( "click", function() {
@@ -210,7 +206,7 @@ $(document).ready(function() {
 });
 
 //allows for button click while not in gameplay mode
-
+/*
   $("#cowBtn").click( function () {
       cowAudio.play();
       $("#cowBtn").css("border", "5px solid green");
@@ -237,7 +233,7 @@ $("#goatBtn").click( function() {
       $("#goatBtn").css("border", "#5px solid yellow");
       $("#goatBtn").css("background-color", "yellow");
       setTimeout(clearBtn, 500);
-  })
+  }) */
 
 
 
