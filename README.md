@@ -21,6 +21,14 @@ If the player does not repeat the pattern correctly, the game will reset and the
 * [Deployed project](http://joshua-lovell-project1.bitballoon.com/)
 * [Trello Board](https://trello.com/b/ftcYgEGh/ga-wdi-project-1#)
 
+### User stories that still need to be brought to life:
+
+  * User will be able to tell his/her highest score even after getting the sequence incorrect and having to go back to round 1.
+  * User will not be able to manipulate the gameboard while the computer is displaying the game sequence.
+  * User will notice an increase in speed of the displayed game sequence as he/she increases the number of rounds.
+  * User will be able to listen to a background song being played throughout the game.
+
+
 ### Wireframe:
 
 ![Imgur](http://i.imgur.com/c9Z8PdD.png)
