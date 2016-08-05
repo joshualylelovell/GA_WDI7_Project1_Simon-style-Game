@@ -7,6 +7,7 @@ They are the inspiration for this version of Simon.
 
 Similar to any other Simon memory game, the player must repeat the randomly generated pattern of colors and sounds.
 If the player does not repeat the pattern correctly, the game will reset and the player will be prompted to start over.
+Unless the player chooses to reset the game by clicking on the reset button, the high score will be maintained and displayed.
 
 
 
@@ -31,7 +32,13 @@ If the player does not repeat the pattern correctly, the game will reset and the
 ### Other to do's:
 
   * DRY up the CSS and JavaScript
+  * Attempt to make code more efficient through better naming structure and function utilization
   * Work on responsive design
+
+### Lessons learned:
+
+  * Gained a better understanding of when to utilize switch statements versus an if/esle statement
+  * Gained more knowledge on the data structure of arrays and how best to compare two arrays against each other.
 
 ### Wireframe:
 
